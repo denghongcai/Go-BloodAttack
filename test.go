@@ -14,7 +14,9 @@ func blood() {
 
     _, body, err := f.Get("/140303_wx") // create session
     param := regExp.FindAllString(string(body), -1)
-    
+    if err != nil { 
+        return 
+    }
     data := url.Values {
 	"tk": {param[0][17:36]},
         "r": {"yy"},
