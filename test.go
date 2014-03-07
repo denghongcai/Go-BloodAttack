@@ -12,15 +12,14 @@ func blood() {
 
     f.Get("/") // create session
     data := url.Values {
-        "task_from": {"self"},
-        "target": {"http://golang.org"},
-        "ac": {"http"},
+        "region": {"yy"},
+        "apartment_num": {"23"},
     }
-    _, body, err := f.PostForm("/140303_wx", data)
+    _, _, err := f.PostForm("/140303_wx", data)
     if err != nil { 
         return 
     }
-    println(string(body))
+    //println(string(body))
     <-execChans
 }
 
